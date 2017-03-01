@@ -15,6 +15,6 @@ docker run -v $(pwd):/data civa86/gifify-light [options] [files] ...
 ## Options
 
 ```bash
--w, --width               output image width
--h, --height              output image height
+-w, --width         output image width
+-h, --height        output image height
 ```
