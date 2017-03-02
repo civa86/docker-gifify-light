@@ -51,6 +51,7 @@ function convert_videos () {
             local VIDEO_W=${streams_stream_0_width}
             local VIDEO_H=${streams_stream_0_height}
             local FILENAME=$(basename "$v")
+            local DIRNAME=$(dirname "$v")
             local RATIO=`echo "scale=2; $VIDEO_W/$VIDEO_H" | bc -l`
 
             FILENAME="${FILENAME%.*}"
@@ -77,7 +78,7 @@ function convert_videos () {
             echo "------------------------------"
             sleep 1
             ffmpeg -i $v -r 10 -vcodec png /tmp/out-static-%05d.png
-            time convert -verbose +dither -layers Optimize -resize $OUT_Wx$OUT_H\> /tmp/out-static*.png  GIF:- | gifsicle --colors 128 --delay=5 --loop --optimize=3 --multifile - > $FILENAME.gif
+            time convert -verbose +dither -layers Optimize -resize $OUT_Wx$OUT_H\> /tmp/out-static*.png  GIF:- | gifsicle --colors 128 --delay=5 --loop --optimize=3 --multifile - > $DIRNAME/$FILENAME.gif
             rm /tmp/out-static*.png
 
             echo "------------------------------"
