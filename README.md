@@ -3,7 +3,7 @@
 Light Docker Container to convert videos in animated GIFs.
 
 
-![docker-badge](http://dockeri.co/image/maxogden/gifify)
+![docker-badge](http://dockeri.co/image/civa86/gifify-lightt)
 
 ## Usage
 
