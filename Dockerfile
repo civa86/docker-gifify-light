@@ -4,7 +4,7 @@ MAINTAINER Dario Civallero <dario.civallero@gmail.com>
 
 ENV LANG C.UTF-8
 
-# Install FFMPEG
+# Install software
 RUN apk add --update ffmpeg gifsicle imagemagick bc
 
 # mount /data
